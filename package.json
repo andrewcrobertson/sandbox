@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "run-p validate:dev sapper:dev",
     "build": "run-s sapper:build validate",
-    "export": "sapper export --legacy",
+    "export": "sapper export --basepath sandbox --legacy",
     "start": "node __sapper__/build",
     "sapper:dev": "sapper dev",
     "sapper:build": "cross-env NODE_ENV=production sapper build --legacy",
