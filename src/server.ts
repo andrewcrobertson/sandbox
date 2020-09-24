@@ -8,6 +8,7 @@ const dev = NODE_ENV === 'development';
 
 express()
 	.use(
+    'sandbox',
 		compression({ threshold: 0 }),
 		sirv('static', { dev }),
 		sapper.middleware()
