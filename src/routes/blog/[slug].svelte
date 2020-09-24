@@ -2,7 +2,7 @@
   import type { Preload } from '@sapper.ext/server'
 
   export const preload: Preload = async function({params}) {
-		const response = await this.fetch(`https://4xlxjn3y4i.execute-api.us-east-1.amazonaws.com/dev/blog/${params.slug}.json`);
+		const response = await this.fetch(`blog/${params.slug}.json`);
 		const post = await response.json();
 
 		if (response.status === 200) {

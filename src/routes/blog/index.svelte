@@ -2,7 +2,7 @@
   import type { Preload } from '@sapper.ext/server'
 
   export const preload: Preload = async function() {
-    const res = await this.fetch(`https://4xlxjn3y4i.execute-api.us-east-1.amazonaws.com/dev/blog.json`);
+    const res = await this.fetch(`blog.json`);
     const posts = await res.json();
     return { posts };
 	}
@@ -27,6 +27,6 @@
 
 <ul>
 	{#each posts as post}
-		<li><a rel="prefetch" href="https://4xlxjn3y4i.execute-api.us-east-1.amazonaws.com/dev/blog/{post.slug}">{post.title}</a></li>
+		<li><a rel="prefetch" href="blog/{post.slug}">{post.title}</a></li>
 	{/each}
 </ul>
